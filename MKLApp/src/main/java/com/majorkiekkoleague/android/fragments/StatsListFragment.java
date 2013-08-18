@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.majorkiekkoleague.android.Constants;
 import com.majorkiekkoleague.android.NetworkUtils;
 import com.majorkiekkoleague.android.R;
 import com.majorkiekkoleague.android.StatsAdapter;
@@ -41,7 +41,7 @@ public class StatsListFragment extends ListFragment {
 
         ArrayList<PlayerSeasonStats> stats;
         // update the main content by replacing fragments
-        InputStream source = NetworkUtils.retrieveStream("http://www.majorkiekkoleague.com/index.php/api/season/id/" + season);
+        InputStream source = NetworkUtils.retrieveStream(Constants.MKL.getUrl(Constants.MKL.SEASON + season));
         Gson gson = new Gson();
         Reader reader = new InputStreamReader(source);
         SeasonStatQuery response = gson.fromJson(reader, SeasonStatQuery.class);
@@ -83,7 +83,7 @@ public class StatsListFragment extends ListFragment {
                 final String season = (String) mSeasonSpinner.getItemAtPosition(position);
                 final int intSsn = Integer.parseInt(season);
                 if (intSsn != currentSeason) {
-                    Toast.makeText(getActivity(), season, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), season, Toast.LENGTH_SHORT).show();
 
                     fragment = getInstance(intSsn);
 
