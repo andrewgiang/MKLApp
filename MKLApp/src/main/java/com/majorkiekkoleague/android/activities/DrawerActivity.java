@@ -29,6 +29,7 @@ public class DrawerActivity extends ActionBarActivity {
     protected CharSequence mDrawerTitle;
     protected CharSequence mTitle;
     protected String[] mDrawerMenuItems;
+    private int currentSelection = -1;
 
     @Override
     public void setTitle(CharSequence title) {
@@ -145,7 +146,12 @@ public class DrawerActivity extends ActionBarActivity {
     protected class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
+            if (currentSelection != position) {
+                selectItem(position);
+            } else {
+                mDrawerLayout.closeDrawer(mDrawerList);
+            }
+            currentSelection = position;
         }
     }
 }
