@@ -1,9 +1,9 @@
-package com.majorkiekkoleague.android.things;
+package com.majorkiekkoleague.android.mkl.things;
 
 /**
  * Created by Andrew on 8/17/13.
  */
-public class GoalData {
+public class MklGoal {
     public long id;
     public int period;
     public String time;
@@ -13,6 +13,5 @@ public class GoalData {
     public int game_id;
     public int gwg;
     public int team_id;
-
 
 }

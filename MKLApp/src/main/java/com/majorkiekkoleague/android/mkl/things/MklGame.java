@@ -1,4 +1,4 @@
-package com.majorkiekkoleague.android.things;
+package com.majorkiekkoleague.android.mkl.things;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,7 +1,8 @@
-package com.majorkiekkoleague.android.things;
+package com.majorkiekkoleague.android.mkl;
+
+import com.majorkiekkoleague.android.mkl.things.PlayerSeasonStats;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Andrew on 8/17/13.

@@ -1,4 +1,4 @@
-package com.majorkiekkoleague.android.things;
+package com.majorkiekkoleague.android.mkl.things;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by Andrew on 8/17/13.
  */
-public class PlayerSeasonStats  implements Parcelable{
+public class PlayerSeasonStats implements Parcelable {
 
     public String abrev;
     public String player_name;
@@ -27,7 +27,7 @@ public class PlayerSeasonStats  implements Parcelable{
 
 
     public PlayerSeasonStats(Parcel in) {
-        abrev=in.readString();
+        abrev = in.readString();
         player_name = in.readString();
         position = in.readString();
         team_name = in.readString();
@@ -82,7 +82,6 @@ public class PlayerSeasonStats  implements Parcelable{
         dest.writeInt(gwg);
         dest.writeInt(pts);
     }
-
 
 
     public static final Parcelable.Creator<PlayerSeasonStats> CREATOR

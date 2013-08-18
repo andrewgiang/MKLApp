@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.majorkiekkoleague.android.things.PlayerSeasonStats;
+import com.majorkiekkoleague.android.mkl.things.PlayerSeasonStats;
 import com.majorkiekkoleague.android.views.StatsEntryView;
 
 import java.util.ArrayList;

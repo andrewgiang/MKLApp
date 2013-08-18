@@ -1,4 +1,8 @@
-package com.majorkiekkoleague.android.things;
+package com.majorkiekkoleague.android.mkl;
+
+import com.majorkiekkoleague.android.mkl.things.MklGame;
+import com.majorkiekkoleague.android.mkl.things.MklGameStats;
+import com.majorkiekkoleague.android.mkl.things.MklGoal;
 
 import java.util.List;
 
@@ -7,9 +11,9 @@ import java.util.List;
  */
 public class GameQuery {
     public MklGame game;
-    public List<GoalData> goal_data;
-    public List<PlayerGameStats> home_stats;
-    public List<PlayerGameStats> away_stats;
+    public List<MklGoal> goal_data;
+    public List<MklGameStats> home_stats;
+    public List<MklGameStats> away_stats;
 
 
     @Override
