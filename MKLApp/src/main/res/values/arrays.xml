@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu_array">
+
+        <item>Statistics</item>
+        <item>Standings</item>
+        <item>Schedule</item>
+        <item>Teams</item>
+        <item>Players</item>
+        <item>Awards</item>
+    </string-array>
+</resources>
