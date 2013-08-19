@@ -18,6 +18,7 @@ import android.widget.ListView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.majorkiekkoleague.android.R;
+import com.majorkiekkoleague.android.fragments.GamesListFragment;
 import com.majorkiekkoleague.android.fragments.StatsListFragment;
 
 /**
@@ -77,6 +78,7 @@ public class DrawerActivity extends ActionBarActivity {
             case 1://Standings
                 break;
             case 2: //Games
+                fragment = new GamesListFragment();
                 break;
 
         }

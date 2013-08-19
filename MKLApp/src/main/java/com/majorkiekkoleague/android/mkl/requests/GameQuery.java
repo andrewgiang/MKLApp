@@ -19,10 +19,10 @@ public class GameQuery {
     @Override
     public String toString() {
         return "GameQuery{" +
-                "game=" + game.toString() +
-                ", goal_data=" + goal_data.toString() +
-                ", home_stats=" + home_stats.toString() +
-                ", away_stats=" + away_stats.toString() +
+                "game=" + game +
+                ", goal_data=" + goal_data +
+                ", home_stats=" + home_stats +
+                ", away_stats=" + away_stats +
                 '}';
     }
 }

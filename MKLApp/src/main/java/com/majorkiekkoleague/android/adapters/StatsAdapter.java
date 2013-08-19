@@ -1,4 +1,4 @@
-package com.majorkiekkoleague.android;
+package com.majorkiekkoleague.android.adapters;
 
 import android.content.Context;
 import android.view.View;
@@ -20,7 +20,9 @@ public class StatsAdapter extends BaseAdapter {
     public StatsAdapter(Context context, ArrayList<PlayerSeasonStats> stats) {
         this.mContext = context;
         this.mPlayerStats = stats;
+
     }
+
 
     @Override
     public int getCount() {

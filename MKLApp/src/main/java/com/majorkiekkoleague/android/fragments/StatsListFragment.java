@@ -17,8 +17,8 @@ import com.android.volley.VolleyError;
 import com.majorkiekkoleague.android.Constants;
 import com.majorkiekkoleague.android.GsonRequest;
 import com.majorkiekkoleague.android.R;
-import com.majorkiekkoleague.android.StatsAdapter;
 import com.majorkiekkoleague.android.activities.DrawerActivity;
+import com.majorkiekkoleague.android.adapters.StatsAdapter;
 import com.majorkiekkoleague.android.mkl.requests.SeasonStatQuery;
 
 import java.util.ArrayList;
@@ -30,6 +30,7 @@ public class StatsListFragment extends ListFragment implements AdapterView.OnIte
 
     private int currentSeason;
     private Spinner mSeasonSpinner;
+
     public StatsListFragment() {
     }
 

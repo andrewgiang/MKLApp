@@ -25,6 +25,7 @@ public class Constants {
                 PLAYERS = "/api/players",//NO_Arguments
                 PLAYER = "/api/player/",//PLAYER_ID
                 STATS_NAME = "/api/stats/name/",//PLAYER NAME REQUIRED, TYPE OF GAME, TOTAL OR NOT
+                GAMES = "/api/games/",
                 GAME = "/api/game/id/",//GAME_ID REQUIRED
                 SEASON = "/api/season/id/";
         /**

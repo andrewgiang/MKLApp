@@ -14,6 +14,15 @@ public class MklGame {
     public int away_id;
     public int season_id;
     public String home_name;
+    public String away_name;
+    @SerializedName("type")
+    public int game_type;
+    @SerializedName("finished")
+    private boolean is_finished;
+    @SerializedName("ot")
+    public boolean is_ot;
+    public int away_score;
+    public int home_score;
 
     @Override
     public String toString() {
@@ -32,15 +41,5 @@ public class MklGame {
                 ", home_score=" + home_score +
                 '}';
     }
-
-    public String away_name;
-    @SerializedName("type")
-    public int game_type;
-    @SerializedName("finished")
-    private boolean is_finished;
-    @SerializedName("ot")
-    public boolean is_ot;
-    public int away_score;
-    public int home_score;
 
 }
