@@ -15,6 +15,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.majorkiekkoleague.android.R;
 import com.majorkiekkoleague.android.fragments.StatsListFragment;
 
@@ -30,6 +32,14 @@ public class DrawerActivity extends ActionBarActivity {
     protected CharSequence mTitle;
     protected String[] mDrawerMenuItems;
     private int currentSelection = -1;
+    private RequestQueue mRequestQueue;
+
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(this);
+        }
+        return mRequestQueue;
+    }
 
     @Override
     public void setTitle(CharSequence title) {

@@ -14,24 +14,22 @@ import android.widget.Spinner;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
 import com.majorkiekkoleague.android.Constants;
 import com.majorkiekkoleague.android.GsonRequest;
 import com.majorkiekkoleague.android.R;
 import com.majorkiekkoleague.android.StatsAdapter;
-import com.majorkiekkoleague.android.mkl.SeasonStatQuery;
+import com.majorkiekkoleague.android.activities.DrawerActivity;
+import com.majorkiekkoleague.android.mkl.requests.SeasonStatQuery;
 
 import java.util.ArrayList;
 
 /**
  * Created by Andrew on 8/18/13.
  */
-public class StatsListFragment extends ListFragment {
+public class StatsListFragment extends ListFragment implements AdapterView.OnItemSelectedListener {
 
     private int currentSeason;
     private Spinner mSeasonSpinner;
-    private RequestQueue mRequestQueue;
-
     public StatsListFragment() {
     }
 
@@ -49,7 +47,8 @@ public class StatsListFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRequestQueue = Volley.newRequestQueue(getActivity());
+        final DrawerActivity activity = (DrawerActivity) getActivity();
+        final RequestQueue requestQueue = activity.getRequestQueue();
         Bundle arguments = this.getArguments();
 
         final View root = inflater.inflate(R.layout.stats_list, container, false);
@@ -76,32 +75,10 @@ public class StatsListFragment extends ListFragment {
             );
             mSeasonSpinner.setSelection(currentSeason - 1);
 
-            mRequestQueue.add(request);
+            requestQueue.add(request);
         }
 
-        mSeasonSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Fragment fragment;
-                final String season = (String) mSeasonSpinner.getItemAtPosition(position);
-                final int intSsn = Integer.parseInt(season);
-                if (intSsn != currentSeason) {
-                    fragment = getInstance(intSsn);
-
-                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.content_frame, fragment);
-                    ft.commit();
-                }
-                mSeasonSpinner.setSelection(position);
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        mSeasonSpinner.setOnItemSelectedListener(this);
 
         return root;
     }
@@ -114,5 +91,26 @@ public class StatsListFragment extends ListFragment {
         mSeasonSpinner.setAdapter(spinnerArrayAdapter);
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Fragment fragment;
+        final String season = (String) mSeasonSpinner.getItemAtPosition(position);
+        final int intSsn = Integer.parseInt(season);
+        if (intSsn != currentSeason) {
+            fragment = getInstance(intSsn);
+
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
+        mSeasonSpinner.setSelection(position);
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 
 }

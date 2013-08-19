@@ -1,4 +1,4 @@
-package com.majorkiekkoleague.android.mkl;
+package com.majorkiekkoleague.android.mkl.requests;
 
 import com.majorkiekkoleague.android.mkl.things.PlayerSeasonStats;
 
