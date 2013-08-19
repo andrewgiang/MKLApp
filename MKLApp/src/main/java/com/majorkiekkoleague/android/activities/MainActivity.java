@@ -64,7 +64,7 @@ public class MainActivity extends DrawerActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-       // menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
+        // menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends DrawerActivity {
             return true;
         }
         // Handle action buttons
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             default:
                 return super.onOptionsItemSelected(item);
         }
