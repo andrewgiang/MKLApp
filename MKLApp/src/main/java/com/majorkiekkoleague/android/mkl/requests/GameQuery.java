@@ -14,6 +14,8 @@ public class GameQuery {
     public List<MklGoal> goal_data;
     public List<MklGameStats> home_stats;
     public List<MklGameStats> away_stats;
+    public String away_icon;
+    public String home_icon;
 
 
     @Override
