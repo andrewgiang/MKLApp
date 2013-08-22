@@ -1,8 +1,7 @@
 package com.majorkiekkoleague.android.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,8 +14,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.majorkiekkoleague.android.Constants;
 import com.majorkiekkoleague.android.GsonRequest;
-import com.majorkiekkoleague.android.R;
 import com.majorkiekkoleague.android.activities.DrawerActivity;
+import com.majorkiekkoleague.android.activities.GameActivity;
 import com.majorkiekkoleague.android.adapters.GamesAdapter;
 import com.majorkiekkoleague.android.mkl.requests.AllGamesQuery;
 import com.majorkiekkoleague.android.mkl.things.MklGame;
@@ -59,11 +58,9 @@ public class GamesListFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         final MklGame item = (MklGame) listAdapter.getItem(position);
         final long game_id = item.id;
-        Fragment fragment;
-        fragment = GameFragment.getInstance(game_id);
-        final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame, fragment).commit();
-
+        Intent i = new Intent(getActivity(), GameActivity.class);
+        i.putExtra("game_id", game_id);
+        startActivity(i);
         super.onListItemClick(l, v, position, id);
     }
 }

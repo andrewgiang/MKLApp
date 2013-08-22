@@ -34,7 +34,6 @@ public class StatsListFragment extends ListFragment implements AdapterView.OnIte
     public StatsListFragment() {
     }
 
-    ;
 
     public static StatsListFragment getInstance(int season) {
         StatsListFragment statsListFragment = new StatsListFragment();

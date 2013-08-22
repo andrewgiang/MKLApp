@@ -7,5 +7,7 @@
     <string name="drawer_open">Open Navigation</string>
     <string name="drawer_close">Close Navigation</string>
     <string name="title_activity_stats">Statistics</string>
+    <string name="ssn">Season</string>
+    <string name="title_activity_game">Game</string>
 
 </resources>

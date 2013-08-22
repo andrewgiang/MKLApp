@@ -11,7 +11,7 @@ public class Constants {
         SCHEDULE,
         TEAMS,
         PLAYERS,
-        AWARDS;
+        AWARDS
 
     }
 

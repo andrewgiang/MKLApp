@@ -45,7 +45,7 @@ public class DrawerActivity extends ActionBarActivity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        getSupportActionBar().setTitle(mTitle);
     }
 
     /**
@@ -70,14 +70,18 @@ public class DrawerActivity extends ActionBarActivity {
     protected void selectItem(int position) {
         Fragment fragment = null;
         switch (position) {
-            case 0://STATS TODO: constants
+            case 0:
+                //news
+                break;
+
+            case 1://STATS TODO: constants
 
                 fragment = StatsListFragment.getInstance(1);
 
                 break;
-            case 1://Standings
+            case 2://Standings
                 break;
-            case 2: //Games
+            case 3: //Games
                 fragment = new GamesListFragment();
                 break;
 
@@ -116,8 +120,8 @@ public class DrawerActivity extends ActionBarActivity {
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
 
         // ActionBarDrawerToggle ties together the the proper interactions
@@ -146,11 +150,7 @@ public class DrawerActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // The action bar home/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        return mDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
 
     }
 
