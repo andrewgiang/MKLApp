@@ -13,10 +13,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 import com.majorkiekkoleague.android.Constants;
 import com.majorkiekkoleague.android.GsonRequest;
 import com.majorkiekkoleague.android.R;
-import com.majorkiekkoleague.android.activities.DrawerActivity;
 import com.majorkiekkoleague.android.cache.DiskBitmapCache;
 import com.majorkiekkoleague.android.mkl.requests.GameQuery;
 
@@ -39,8 +39,7 @@ public class GameFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final DrawerActivity activity = (DrawerActivity) getActivity();
-        mRequestQueue = activity.getRequestQueue();
+        mRequestQueue = Volley.newRequestQueue(getActivity());
         final View root = inflater.inflate(R.layout.fragment_game, container, false);
         final TextView mGameScore = (TextView) root.findViewById(R.id.game_score);
         final NetworkImageView mHomeIcon = NetworkImageView.class.cast(root.findViewById(R.id.game_home_icon));

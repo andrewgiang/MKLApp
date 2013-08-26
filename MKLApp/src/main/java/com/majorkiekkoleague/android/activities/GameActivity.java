@@ -15,12 +15,12 @@ public class GameActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setTheme(R.style.Theme_AppCompat_Light_DarkActionBar);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Bundle args = getIntent() != null ? getIntent().getExtras() : null;
         if (args != null) {
-            int game_id = args.getInt("game_id");
+            long game_id = args.getLong("game_id");
             Fragment fragment;
             fragment = GameFragment.getInstance(game_id);
             final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
